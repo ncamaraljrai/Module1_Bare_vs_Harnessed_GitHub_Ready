@@ -67,24 +67,8 @@ API docs: `http://localhost:8000/docs`
 - Preserve current naming style.
 - Make the smallest coherent change.
 - State assumptions instead of silently guessing.
-## Verification commands
-Run these before declaring the task complete.
-```powershell
-cd backend
-python -m pytest -q
-python -m compileall app tests
-```
-For targeted iteration, run the relevant test first, then the full suite.
-If HTTP behavior changes, also start:
-```powershell
-uvicorn app.main:app --port 8000
-```
-Verify the changed behavior plus these invariants:
-- valid URL shortens successfully;
-- duplicate URL returns the same code;
-- invalid URL is rejected;
-- valid short code redirects with 307;
-- unknown code returns 404.
+## Verification commands — intentionally ablated for Run 3
+_This feedback subsystem has been removed for the ablation experiment._
 ## Definition of done
 - Requested behavior is implemented.
 - New regression tests cover the feature.

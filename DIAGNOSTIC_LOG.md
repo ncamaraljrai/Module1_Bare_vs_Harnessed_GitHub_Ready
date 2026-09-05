@@ -1,99 +1,144 @@
-# Diagnostic Log — Bare vs. Harnessed Ablation Experiment
+# DIAGNOSTIC_LOG.md — Bare vs. Harnessed Ablation Experiment
 
-Repository: `ncamaraljrai/foundations_lab01_url_shortener`
+**Repository:** `https://github.com/ncamaraljrai/foundations_lab01_url_shortener`  
+**Starting commit:** `RECORD`  
+**Model/settings held constant:** `RECORD`  
+**Task:** Add optional expiration support to shortened URLs: `POST /shorten` may accept `expires_in_minutes`, expired short codes must return HTTP 410, non-expiring URLs must keep current behavior, and add regression tests.
 
-Task: Add optional expiration support to shortened URLs: POST /shorten may accept `expires_in_minutes`, expired short codes must return HTTP 410, non-expiring URLs must keep current behavior, and add regression tests.
+> Replace every `RECORD` with actual evidence from the three fresh-session runs.
 
-> Fill this file only from the actual three fresh-session runs. Do not invent timings or outcomes.
+## Three-row diagnostic log
 
-## Three-run log
+| Run | Harness state | Total time | Runs? | Correct? | Where time went | Guesses observed |
+|---|---:|---:|---|---|---|---|
+| Bare | none | `RECORD` | `Y/N` | `Y/N` | `RECORD: exploration / implementation / verification` | `RECORD` |
+| Harnessed | full minimal | `RECORD` | `Y/N` | `Y/N` | `RECORD: exploration / implementation / verification` | `RECORD` |
+| Ablated | full minus feedback | `RECORD` | `Y/N` | `Y/N` | `RECORD: exploration / implementation / verification` | `RECORD` |
 
-| Run | Harness state | Runs? | Correct? | Time / where time went | Guesses observed |
-|---|---|---|---|---|---|
-| Bare | none | RECORD | RECORD | RECORD | RECORD |
-| Harnessed | full minimal | RECORD | RECORD | RECORD | RECORD |
-| Ablated | full minus feedback/verification | RECORD | RECORD | RECORD | RECORD |
+## Run 1 — Bare
 
-## Run 1 — Bare evidence
+**Start / stop:** `RECORD`  
+**First edit at:** `RECORD`  
+**First verification at:** `RECORD / none`
 
-- Total time: `RECORD`
-- Time exploring repo: `RECORD`
-- Time implementing: `RECORD`
-- Time verifying: `RECORD`
-- Commands the agent discovered by itself: `RECORD`
-- Tests actually run: `RECORD`
-- Result runs: `YES / NO`
-- Result correct: `YES / NO`
+**Observed work allocation**
+- Repo exploration: `RECORD`
+- Implementation: `RECORD`
+- Verification/debugging: `RECORD`
 
-Concrete guesses:
+**Commands discovered/run**
+```text
+RECORD
+```
+
+**Concrete guesses made by the agent**
 1. `RECORD`
 2. `RECORD`
 3. `RECORD`
 
-Observed failures:
+**Failures or defects observed**
 1. `RECORD`
 2. `RECORD`
 3. `RECORD`
 
-## Run 2 — Harnessed evidence
+**Outcome evidence**
+```text
+RECORD exact test result / error / acceptance-check result
+```
 
-- Total time: `RECORD`
-- Time exploring repo: `RECORD`
-- Time implementing: `RECORD`
-- Time verifying: `RECORD`
-- Verification commands used from AGENTS.md: `RECORD`
-- Result runs: `YES / NO`
-- Result correct: `YES / NO`
+## Run 2 — Harnessed
 
-Guesswork eliminated:
+**Start / stop:** `RECORD`  
+**First edit at:** `RECORD`  
+**First verification at:** `RECORD`
+
+**Observed work allocation**
+- Repo exploration: `RECORD`
+- Implementation: `RECORD`
+- Verification/debugging: `RECORD`
+
+**Harness instructions used**
 1. `RECORD`
 2. `RECORD`
 3. `RECORD`
 
-Specific verification behavior:
-- `RECORD`
+**Guesswork eliminated relative to Bare**
+1. `RECORD`
+2. `RECORD`
+3. `RECORD`
 
-## Run 3 — Ablated evidence
+**Verification commands actually run**
+```text
+RECORD
+```
 
-Ablated subsystem: **Feedback** — remove only the Verification commands section from `AGENTS.md`.
+**Outcome evidence**
+```text
+RECORD exact test result / acceptance-check result
+```
 
-- Total time: `RECORD`
-- Time exploring repo: `RECORD`
-- Time implementing: `RECORD`
-- Time verifying: `RECORD`
-- Did it independently discover and run the correct tests? `RECORD`
-- Result runs: `YES / NO`
-- Result correct: `YES / NO`
+## Run 3 — Ablated feedback subsystem
 
-Measured degradation versus harnessed:
-- `RECORD`
+**Ablated subsystem:** Feedback / explicit verification commands  
+**Start / stop:** `RECORD`  
+**First edit at:** `RECORD`  
+**First verification at:** `RECORD / none`
 
-## Layer attribution for bare-run failures
+**Observed work allocation**
+- Repo exploration: `RECORD`
+- Implementation: `RECORD`
+- Verification/debugging: `RECORD`
 
-Use only: instruction / tool / environment / state / feedback.
+**Did the agent independently discover the correct verification commands?** `RECORD`
 
-| Bare-run failure | Layer | Evidence |
+**What degraded compared with the harnessed run?**
+- Time delta: `RECORD`
+- Verification delta: `RECORD`
+- Correctness delta: `RECORD`
+- Guesswork delta: `RECORD`
+
+**Outcome evidence**
+```text
+RECORD exact test result / acceptance-check result
+```
+
+## Layer attribution for Bare-run failures
+
+Allowed layers: **instruction / tool / environment / state / feedback**
+
+| Bare-run failure | Layer | Concrete evidence for attribution |
 |---|---|---|
-| RECORD | RECORD | RECORD |
-| RECORD | RECORD | RECORD |
-| RECORD | RECORD | RECORD |
+| `RECORD` | `RECORD` | `RECORD` |
+| `RECORD` | `RECORD` | `RECORD` |
+| `RECORD` | `RECORD` | `RECORD` |
 
 ## Reflection
 
-### Subsystem that mattered most
-`RECORD — cite the comparison between runs.`
+### 1. Subsystem that mattered most
+`RECORD. Name one subsystem and cite the measured difference between runs.`
 
-### Failure I would previously have blamed on the model
-`RECORD — identify the failure and the harness layer that actually caused it.`
+### 2. Failure I would previously have blamed on the model
+`RECORD. State the observed failure, the correct harness layer, and the evidence.`
 
-### First AGENTS.md change I would make in a real project
-`RECORD — make it evidence-based from this experiment.`
+### 3. First AGENTS.md change I would make in a real project
+`RECORD. Tie the change directly to this experiment rather than giving a generic recommendation.`
 
-## Quality-bar check
+## Ablation impact statement
 
-Before submission, make sure you can point to:
-- one concrete time-saving observation;
-- one specific guess removed by AGENTS.md;
-- one verification difference between harnessed and ablated;
-- one measurable performance/correctness drop caused by ablation;
-- one precise layer attribution supported by evidence.
+Use a quantitative sentence wherever the evidence permits:
+
+> Removing the `RECORD` subsystem changed `RECORD metric` from `RECORD` to `RECORD`, and caused `RECORD concrete behavioral difference`.
+
+## Final evidence check
+
+- [ ] All three runs started from the same commit.
+- [ ] All three used the same model/settings.
+- [ ] All three used the identical task sentence.
+- [ ] Bare run received no `AGENTS.md`.
+- [ ] Harnessed run received the complete `AGENTS.md`.
+- [ ] Ablated run removed only the feedback subsystem.
+- [ ] The table contains actual timings/outcomes.
+- [ ] At least one specific guess is documented.
+- [ ] At least one failure has precise layer attribution.
+- [ ] The ablation section shows a measurable drop or behavioral difference.
+- [ ] Claims of correctness are backed by test/acceptance evidence.
